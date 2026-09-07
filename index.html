@@ -3,126 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pasynok Consulting — Développement d'outils sur mesure</title>
+<title>Pasynok Consulting — Outils sur mesure</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect width='200' height='200' rx='18' fill='%237A2438'/%3E%3Cline x1='18' y1='182' x2='182' y2='18' stroke='%23D9AFB6' stroke-width='5' opacity='0.55'/%3E%3Crect x='55' y='40' width='26' height='120' fill='%23FFFFFF'/%3E%3Crect x='55' y='40' width='95' height='26' fill='%23FFFFFF'/%3E%3Crect x='124' y='40' width='26' height='65' fill='%23FFFFFF'/%3E%3Crect x='81' y='79' width='69' height='26' fill='%23FFFFFF'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --bordeaux: #7A2438;
-    --bordeaux-mid: #B06A78;
-    --bordeaux-light: #D3A3AC;
-    --bordeaux-pale: #F7EEEF;
-    --bordeaux-line: #E7D9DB;
-    --text: #262422;
-    --text-soft: #6B6660;
-    --bg: #FFFFFF;
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body {
-    font-family: 'Inter', -apple-system, sans-serif;
-    color: var(--text);
-    background: var(--bg);
-    line-height: 1.55;
-  }
-  h1, h2, h3, .mark-word {
-    font-family: 'Space Grotesk', 'Inter', sans-serif;
-    font-weight: 700;
-    letter-spacing: -0.01em;
-  }
-  a { color: inherit; }
-  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 32px; }
-
-  /* ===== NAV ===== */
-  nav {
-    position: sticky; top: 0; z-index: 50;
-    background: rgba(255,255,255,0.92);
-    backdrop-filter: blur(6px);
-    border-bottom: 1px solid var(--bordeaux-line);
-  }
-  nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 72px; }
-  .brand { display: flex; align-items: center; text-decoration: none; }
-  .brand svg { margin-right: 12px; }
-  .brand-word { font-size: 18px; letter-spacing: 0.02em; color: var(--bordeaux); }
-  .brand-word span { color: var(--bordeaux-mid); font-weight: 500; }
-  nav ul { list-style: none; display: flex; font-size: 15px; font-weight: 500; }
-  nav ul li { margin-right: 36px; }
-  nav ul li:last-child { margin-right: 0; }
-  nav ul a { text-decoration: none; color: var(--text); }
-  nav ul a:hover { color: var(--bordeaux); }
-  .nav-cta {
-    background: var(--bordeaux); color: #fff !important; padding: 10px 20px;
-    border-radius: 6px; font-size: 14px; font-weight: 600; text-decoration: none;
-  }
-  @media (max-width: 720px) { nav ul { display: none; } }
-
-  /* ===== HERO ===== */
-  header.hero { padding: 96px 0 88px; }
-  .hero .wrap { display: flex; flex-direction: column; align-items: flex-start; gap: 28px; }
-  .hero-mark { width: 84px; height: 84px; }
-  .hero h1 { font-size: clamp(34px, 5vw, 54px); line-height: 1.08; max-width: 760px; }
-  .hero h1 em { font-style: normal; color: var(--bordeaux); }
-  .hero p.lede { font-size: 19px; color: var(--text-soft); max-width: 560px; }
-  .hero-line { width: 64px; height: 3px; background: var(--bordeaux-mid); border: none; }
-  .btn-row { display: flex; flex-wrap: wrap; margin-top: 8px; }
-  .btn-row > * { margin: 0 16px 12px 0; }
-  .btn-primary {
-    background: var(--bordeaux); color: #fff; padding: 14px 28px; border-radius: 6px;
-    text-decoration: none; font-weight: 600; font-size: 15px;
-  }
-  .btn-secondary {
-    border: 1.5px solid var(--bordeaux-line); color: var(--text); padding: 14px 28px;
-    border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 15px;
-  }
-
-  /* ===== SECTION LABEL ===== */
-  .eyebrow {
-    text-transform: uppercase; letter-spacing: 0.12em; font-size: 13px;
-    color: var(--bordeaux-mid); font-weight: 600; margin-bottom: 10px;
-  }
-
-  /* ===== SERVICES ===== */
-  section.services { padding: 88px 0; background: var(--bordeaux-pale); }
-  .services h2 { font-size: 30px; margin-bottom: 8px; }
-  .services > .wrap > p { color: var(--text-soft); max-width: 520px; margin-bottom: 48px; }
-  .service-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
-  @media (max-width: 720px) { .service-grid { grid-template-columns: 1fr; } }
-  .service-card {
-    background: #fff; border: 1px solid var(--bordeaux-line); border-radius: 10px;
-    padding: 28px; 
-  }
-  .service-card .num { font-size: 13px; font-weight: 700; color: var(--bordeaux-light); margin-bottom: 14px; }
-  .service-card h3 { font-size: 19px; margin-bottom: 10px; }
-  .service-card p { color: var(--text-soft); font-size: 15px; }
-
-  /* ===== ABOUT ===== */
-  section.about { padding: 88px 0; background: var(--bordeaux-pale); }
-  .about-inner { display: flex; align-items: flex-start; }
-  .about-inner h2 { margin-right: 56px; }
-  @media (max-width: 720px) { .about-inner { flex-direction: column; } }
-  .about h2 { font-size: 30px; margin-bottom: 20px; flex: 0 0 260px; }
-  .about-text { font-size: 17px; color: var(--text); max-width: 560px; }
-  .about-text p + p { margin-top: 16px; }
-
-  /* ===== CONTACT ===== */
-  section.contact { padding: 96px 0; text-align: center; }
-  .contact h2 { font-size: 32px; margin-bottom: 14px; }
-  .contact p { color: var(--text-soft); font-size: 17px; margin-bottom: 36px; }
-  .contact-links { display: flex; justify-content: center; flex-wrap: wrap; }
-  .contact-links > * { margin: 0 10px 12px; }
-
-  footer { border-top: 1px solid var(--bordeaux-line); padding: 28px 0; }
-  footer .wrap { display: flex; justify-content: space-between; align-items: center; font-size: 13px; color: var(--text-soft); }
-  @media (max-width: 560px) { footer .wrap { flex-direction: column; gap: 8px; } }
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <nav>
   <div class="wrap">
-    <a class="brand" href="#top">
-      <svg class="mark" width="30" height="30" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <a class="brand" href="index.html">
+      <svg width="30" height="30" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
         <rect width="200" height="200" rx="26" fill="#7A2438"/>
         <line x1="18" y1="182" x2="182" y2="18" stroke="#D9AFB6" stroke-width="6" opacity="0.6"/>
         <rect x="55" y="40" width="26" height="120" fill="#FFFFFF"/>
@@ -133,10 +26,11 @@
       <span class="brand-word">PASYNOK <span>CONSULTING</span></span>
     </a>
     <ul>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#about">À propos</a></li>
+      <li><a href="index.html" class="active">Outils sur mesure</a></li>
+      <li><a href="comptabilite.html">Comptabilité</a></li>
+      <li><a href="apropos.html">À propos</a></li>
     </ul>
-    <a class="nav-cta" href="#contact">Me contacter</a>
+    <a class="nav-cta" href="contact.html">Me contacter</a>
   </div>
 </nav>
 
@@ -154,7 +48,7 @@
     <hr class="hero-line">
     <p class="lede">Développement d'outils sur mesure pour PME, indépendants et cabinets — automatisation, suivi et tableaux de bord pensés pour votre façon de travailler, pas l'inverse.</p>
     <div class="btn-row">
-      <a class="btn-primary" href="#contact">Discutons de votre projet</a>
+      <a class="btn-primary" href="contact.html">Discutons de votre projet</a>
       <a class="btn-secondary" href="#services">Voir ce que je construis</a>
     </div>
   </div>
@@ -164,7 +58,7 @@
   <div class="wrap">
     <p class="eyebrow">Ce que je construis</p>
     <h2>Quatre types d'outils que je développe</h2>
-    <p>Toujours sur mesure, jamais un logiciel générique qu'on essaie de faire rentrer dans votre réalité.</p>
+    <p class="section-intro">Toujours sur mesure, jamais un logiciel générique qu'on essaie de faire rentrer dans votre réalité.</p>
     <div class="service-grid">
       <div class="service-card">
         <div class="num">01</div>
@@ -190,31 +84,9 @@
   </div>
 </section>
 
-<section class="about" id="about">
-  <div class="wrap about-inner">
-    <h2>À propos</h2>
-    <div class="about-text">
-      <p>Je m'appelle Adrian Pasynok. Je travaille au quotidien avec des cabinets comptables, ce qui me donne une vue directe sur les tâches répétitives qui grignotent le temps des indépendants et des petites entreprises.</p>
-      <p>Pasynok Consulting est né de ce constat : la plupart des outils du marché sont soit trop génériques, soit trop complexes pour une petite structure. Je construis des solutions ciblées, adaptées à la réalité de chaque client — ni plus, ni moins.</p>
-    </div>
-  </div>
-</section>
-
-<section class="contact" id="contact">
-  <div class="wrap">
-    <p class="eyebrow">Contact</p>
-    <h2>Un besoin précis en tête ?</h2>
-    <p>Décrivez-moi votre situation actuelle — je vous dis honnêtement si je peux vous faire gagner du temps.</p>
-    <div class="contact-links">
-      <a class="btn-primary" href="mailto:pasynok.pro@gmail.com">pasynok.pro@gmail.com</a>
-      <a class="btn-secondary" href="tel:+32483583160">+32 483 58 31 60</a>
-    </div>
-  </div>
-</section>
-
 <footer>
   <div class="wrap">
-    <span>© 2026 Pasynok Consulting — Développement d'outils sur mesure</span>
+    <span>© 2026 Pasynok Consulting</span>
     <span>Bruxelles, Belgique</span>
   </div>
 </footer>
